@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+
+<title>untitled</title>
+<style>
+* {
+box-sizing: border-box;
+}
+
+/* Style body */
+body {
+  font-family: sans-serif;
+  background: #111111;
+  color: white;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+/* top navigation bar */
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+/* Style navigation bar */
+.navbar a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Column container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Main column */
+#main {
+  flex: 80%;
+  padding: 10px;
+  max-width: 1100px;
+  justify-content: center;
+}
+
+/* right column */
+.right {
+  flex: 20%;
+  padding: 10px;
+  max-width: 180px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="#">News</a>
+  <a href="#">Contact</a>
+  <a href="#">Link</a>
+</div>
+
+<div class="row">
+<div id="main">
+<video id="vdc" controls autoplay style="max-width:100%" onended="nextv()"></video>
+</div>
+<div class="right">
+  <h4>1111</h4>
+  <p>2222</p>
+</div>
+</div>
+<script>
+var dat = Math.floor(Date.now() / 1000)
+var ple=0
+var p = {
+    'http://vjs.zencdn.net/v/oceans.mp4': 40,
+    'http://media.w3.org/2010/05/sintel/trailer.mp4': 40,
+    'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4': 40,
+    'http://media.w3.org/2010/05/video/movie_300.mp4': 40
+};
+
+for(var le in p) {
+    ple+=p[le]}
+
+var rem = dat % ple;
+
+for(var vid in p) {
+    var plvi = vid
+    if (rem < p[vid])  {
+    break}
+    rem-=p[vid]}
+
+curv = document.getElementById('vdc').src = plvi + '#t=' + rem
+
+function nextv() {
+var fir = 0
+var nxv = 0
+for(var nexv in p) {
+	if (fir == 0)  {
+    fir++; firv = nexv}
+    if (nxv > 0)  {
+    plvi = nexv; break}
+    if (plvi == nexv)  {
+    nxv++; plvi = firv}}
+document.getElementById('vdc').src = plvi;}
+
+</script>
+<!--console.log()-->
+<!--alert()-->
+<!--
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+
+videoPlayer = document.getElementById("video");
+    videoPlayer.src = nextVideo;
+    videoPlayer.play();
+ -->
+</body>
+
+</html>
